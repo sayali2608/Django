@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static '../../../../static/food/style.css' %}">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body style = "background-color: white">
+    
+    <div>
+        <h3 style="margin-left:20px; margin-top:10px;display: inline-block;">Patient Health Questionnaire (PHQ-9)</h3>
+        <nav
+            style="float: right; border-radius: 25px;  border: 2px solid #528aee;padding: 10px; width: 200px; margin-right:20px; margin-top:10px">
+            <a> WELCOME {{username}}</a> |
+            <a hidden> WELCOME {{form.username}}</a>
+            <!-- {% if messages %}
+            {% for message in messages %}
+                  <p style="color: #528aee"> WELCOME {{ message }} </p>
+                {% endfor %}
+          {% endif %} -->
+            <!-- {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %} -->
+            <a href="{% url 'logout' %}">Logout</a>
+        </nav>
+    
+        <form method="POST" style=" margin-left: 20px; margin-top: 20px; margin-right:20px">
+            {% csrf_token %}
+            <section id="question1" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color: mintcream;">
+                <p>1 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Little interest or pleasure in doing things</strong>"?"</p>
+                    {{form.answer_1}}
+                <!--div class="form-item">
+                    <input type="radio" id="question-1-1" value="0">
+                    <label for="question-1-1" data-question="1">
+                        Not At all
+                    </label>
+                </div> 
+                <div class="form-item">
+                    <input type="radio" id="question-1-2" value="0">
+                    <label for="question-1-2" data-question="1">
+                        Several Days
+                    </label>
+                </div>    
+                <div class="form-item">
+                    <input type="radio" id="question-1-3" value="0">
+                    <label for="question-1-3" data-question="1">
+                        More Than Half the Days
+                    </label>
+                </div> 
+                <div class="form-item">
+                    <input type="radio" id="question-1-4" value="0">
+                    <label for="question-1-4" data-question="1">
+                        Nearly Every Day
+                    </label>
+                </div--> 
+            </section>
+            <section id="question2" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>2 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: "
+                    <strong>Feeling down, depressed or hopeless</strong>"?"</p>
+                    {{form.answer_2}} 
+            </section>
+            <section id="question3" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream ;" >
+                <p>3 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Trouble falling asleep, staying asleep, or sleeping too much</strong>"?"</p>
+                    {{form.answer_3}}
+            </section>
+            <section id="question4" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>4 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong> Feeling tired or having little energy</strong>"?"</p>
+                    {{form.answer_4}}
+            </section>
+            <section id="question5" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream ;">
+                <p>5 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Poor appetite or overeating</strong>"?"</p>
+                    {{form.answer_5}}
+            </section>
+            <section id="question6" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>6 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Feeling bad about yourself - or that you're a failure or have let yourself or your family down</strong>"?"</p>
+                    {{form.answer_6}}
+            </section>
+            <section id="question7" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream ;">
+                <p>7 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Trouble concentrating on things, such as reading the newspaper or watching television</strong>"?"</p>
+                    {{form.answer_7}}
+            </section>
+            <section id="question8" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>8 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Moving or speaking so slowly that other people could have noticed. Or, 
+                        the opposite - being so fidgety or restless that you have been moving around a lot more than usual</strong>"?"</p>
+                        {{form.answer_8}}
+            </section>
+            <section id="question9" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream; margin-bottom: 20px;">
+                <p>9 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Thoughts that you would be better off dead or of hurting yourself in some way</strong>"?"</p>
+                    {{form.answer_9}} 
+            </section>
+            <div class="d-flex mx-4 mb-3 mb-lg-4">
+                <!-- <script type="text/javascript"> 
+                    document.getElementById("example").setAttribute('value','ppp');
+                  </script> -->
+                <button onclick="alert('Your Test Submitted Successfully')" type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <a href="{% url 'login' %}"></a>
+            </div>
+
+            <input type="hidden" name="username" value={{username}}>
+
+            <!-- <option value="free">{{form.username}}</option> -->
+            
+            <!-- <p id="example"> {{form.username}} </p> -->
+
+            <!-- <input type="hidden" name="username" value={{user.username}} /> -->
+            <!-- <div class="d-flex mx-4 mb-3 mb-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <a href="{% url 'test' %}"></a>
+            </div> -->
+            <!-- <form action="/test/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="username" value={{user.username}} />
+                <button type="submit" class="btn btn-primary btn-lg" formmethod="POST">Submit</button>
+              </form> -->
+        </form>
+    </div>
+</body>
+</html>

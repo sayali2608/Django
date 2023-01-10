@@ -1,0 +1,27 @@
+{% extends 'admin/base_site.html' %}
+
+{% load static %}
+
+
+
+
+{% block branding %}
+    <h1 id="head">
+              Manager
+    </h1>
+
+   
+{% endblock %}
+
+{% block sidebar %}
+    {{block.super}}
+    {% if 'login' not in request.path and 'logout' not in request.path %}
+    <div>
+        <h2> _________________________________________________</h2>
+        <h1> Manager dashboard </h1>
+        <h2> Patients registered: {{ patients }} </h2>
+        <h2> Doctors registered: {{ doctors }} </h2>
+        <h2> Counselors registered: {{ counselors }} </h2>
+    </div>
+    {% endif %}
+{% endblock %}
