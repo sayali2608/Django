@@ -1,0 +1,384 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static '../../../../static/food/style.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body style = "background-color: white">
+    <div>
+        <h3 style="margin-left:20px; margin-top:10px"><strong>{{all_assessment_test.username}}'s</strong> health questionnaire results </h3>
+        <form style=" margin-left: 20px; margin-top: 20px; margin-right:20px">
+            <section id="question1" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream ;">
+                <p>1 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Little interest or pleasure in doing things</strong>"?"</p>
+                <div class="form-item">
+                    <input type="radio" id="question-1-1" value="0" {% if all_assessment_test.answer_1 == "Not at all"%} checked{% endif %}>
+                    <label for="question-1-1" data-question="1">
+                        Not At all
+                    </label>
+                </div> 
+                <div class="form-item">
+                    <input type="radio" id="question-1-2" value="0" {% if all_assessment_test.answer_1 == "Several Days"%} checked{% endif %}>
+                    <label for="question-1-2" data-question="1">
+                        Several Days
+                    </label>
+                </div>    
+                <div class="form-item">
+                    <input type="radio" id="question-1-3" value="0" {% if all_assessment_test.answer_1 == "More than half the Days"%} checked{% endif %}>
+                    <label for="question-1-3" data-question="1">
+                        More Than Half the Days
+                    </label>
+                </div> 
+                <div class="form-item">
+                    <input id="1-1" type="radio" id="question-1-4" value="0" {% if all_assessment_test.answer_1 == "Nearly everydays"%} checked{% endif %}>
+                    <label for="question-1-4" data-question="1">
+                        Nearly Every Day
+                    </label>
+                </div> 
+            </section>
+            <section id="question2" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>2 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: "
+                    <strong>Feeling down, depressed or hopeless</strong>"?"</p>
+                    <div class="form-item">
+                        <input type="radio" id="question-2-1" value="0" {% if all_assessment_test.answer_2 == "Not at all"%} checked{% endif %}>
+                        <label for="question-2-1" data-question="2">
+                            Not At all
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input type="radio" id="question-2-2" value="0" {% if all_assessment_test.answer_2 == "Several Days"%} checked{% endif %}>
+                        <label for="question-2-2" data-question="2">
+                            Several Days
+                        </label>
+                    </div>    
+                    <div class="form-item">
+                        <input type="radio" id="question-2-3" value="0" {% if all_assessment_test.answer_2 == "More than half the Days"%} checked{% endif %}>
+                        <label for="question-2-3" data-question="2">
+                            More Than Half the Days
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input id="2-1" type="radio" id="question-2-4" value="0" {% if all_assessment_test.answer_2 == "Nearly everydays"%} checked{% endif %}>
+                        <label for="question-2-4" data-question="2">
+                            Nearly Every Day
+                        </label>
+                    </div> 
+            </section>
+            <section id="question3" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream ;" >
+                <p>3 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Trouble falling asleep, staying asleep, or sleeping too much</strong>"?"</p>
+                    <div class="form-item">
+                        <input type="radio" id="question-3-1" value="0" {% if all_assessment_test.answer_3 == "Not at all"%} checked{% endif %}>
+                        <label for="question-3-1" data-question="3">
+                            Not At all
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input type="radio" id="question-3-2" value="0" {% if all_assessment_test.answer_3 == "Several Days"%} checked{% endif %}>
+                        <label for="question-3-2" data-question="3">
+                            Several Days
+                        </label>
+                    </div>    
+                    <div class="form-item">
+                        <input type="radio" id="question-3-3" value="0" {% if all_assessment_test.answer_3 == "More than half the Days"%} checked{% endif %}>
+                        <label for="question-3-3" data-question="3">
+                            More Than Half the Days
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input id="3-1" type="radio" id="question-3-4" value="0" {% if all_assessment_test.answer_3 == "Nearly everydays"%} checked{% endif %}>
+                        <label for="question-3-4" data-question="3">
+                            Nearly Every Day
+                        </label>
+                    </div> 
+            </section>
+            <section id="question4" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>4 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong> Feeling tired or having little energy</strong>"?"</p>
+                    <div class="form-item">
+                        <input type="radio" id="question-4-1" value="0" {% if all_assessment_test.answer_4 == "Not at all"%} checked{% endif %}>
+                        <label for="question-4-1" data-question="4">
+                            Not At all
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input type="radio" id="question-4-2" value="0" {% if all_assessment_test.answer_4 == "Several Days"%} checked{% endif %}>
+                        <label for="question-4-2" data-question="4">
+                            Several Days
+                        </label>
+                    </div>    
+                    <div class="form-item">
+                        <input type="radio" id="question-4-3" value="0" {% if all_assessment_test.answer_4 == "More than half the Days"%} checked{% endif %}>
+                        <label for="question-4-3" data-question="4">
+                            More Than Half the Days
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input id="4-1" type="radio" id="question-4-4" value="0" {% if all_assessment_test.answer_4 == "Nearly everydays"%} checked{% endif %}>
+                        <label for="question-4-4" data-question="4">
+                            Nearly Every Day
+                        </label>
+                    </div> 
+            </section>
+            <section id="question5" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream ;">
+                <p>5 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Poor appetite or overeating</strong>"?"</p>
+                    <div class="form-item">
+                        <input type="radio" id="question-5-1" value="0" {% if all_assessment_test.answer_5 == "Not at all"%} checked{% endif %}>
+                        <label for="question-5-1" data-question="5">
+                            Not At all
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input type="radio" id="question-5-2" value="0" {% if all_assessment_test.answer_5 == "Several Days"%} checked{% endif %}>
+                        <label for="question-5-2" data-question="5">
+                            Several Days
+                        </label>
+                    </div>    
+                    <div class="form-item">
+                        <input type="radio" id="question-5-3" value="0" {% if all_assessment_test.answer_5 == "More than half the Days"%} checked{% endif %}>
+                        <label for="question-5-3" data-question="5">
+                            More Than Half the Days
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input id="5-1" type="radio" id="question-5-4" value="0" {% if all_assessment_test.answer_5 == "Nearly everydays"%} checked{% endif %}>
+                        <label for="question-5-4" data-question="5">
+                            Nearly Every Day
+                        </label>
+                    </div> 
+            </section>
+            <section id="question6" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>6 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Feeling bad about yourself - or that you're a failure or have let yourself or your family down</strong>"?"</p>
+                    <div class="form-item">
+                        <input type="radio" id="question-6-1" value="0" {% if all_assessment_test.answer_6 == "Not at all"%} checked{% endif %}>
+                        <label for="question-6-1" data-question="6">
+                            Not At all
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input type="radio" id="question-6-2" value="0" {% if all_assessment_test.answer_6 == "Several Days"%} checked{% endif %}>
+                        <label for="question-6-2" data-question="6">
+                            Several Days
+                        </label>
+                    </div>    
+                    <div class="form-item">
+                        <input type="radio" id="question-6-3" value="0" {% if all_assessment_test.answer_6 == "More than half the Days"%} checked{% endif %}>
+                        <label for="question-6-3" data-question="6">
+                            More Than Half the Days
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input id="6-1" type="radio" id="question-6-4" value="0" {% if all_assessment_test.answer_6 == "Nearly everydays"%} checked{% endif %}>
+                        <label for="question-6-4" data-question="6">
+                            Nearly Every Day
+                        </label>
+                    </div> 
+            </section>
+            <section id="question7" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream ;">
+                <p>7 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Trouble concentrating on things, such as reading the newspaper or watching television</strong>"?"</p>
+                    <div class="form-item">
+                        <input type="radio" id="question-7-1" value="0" {% if all_assessment_test.answer_7 == "Not at all"%} checked{% endif %}>
+                        <label for="question-7-1" data-question="7">
+                            Not At all
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input type="radio" id="question-7-2" value="0" {% if all_assessment_test.answer_7 == "Several Days"%} checked{% endif %}>
+                        <label for="question-7-2" data-question="7">
+                            Several Days
+                        </label>
+                    </div>    
+                    <div class="form-item">
+                        <input type="radio" id="question-7-3" value="0" {% if all_assessment_test.answer_7 == "More than half the Days"%} checked{% endif %}>
+                        <label for="question-7-3" data-question="7">
+                            More Than Half the Days
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input id="7-1" type="radio" id="question-7-4" value="0" {% if all_assessment_test.answer_7 == "Nearly everydays"%} checked{% endif %}>
+                        <label for="question-7-4" data-question="7">
+                            Nearly Every Day
+                        </label>
+                    </div> 
+            </section>
+            <section id="question8" class="question even" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #bcd2e8; color:black ;">
+                <p>8 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Moving or speaking so slowly that other people could have noticed. Or, 
+                        the opposite - being so fidgety or restless that you have been moving around a lot more than usual</strong>"?"</p>
+                        <div class="form-item">
+                            <input type="radio" id="question-8-1" value="0" {% if all_assessment_test.answer_8 == "Not at all"%} checked{% endif %}>
+                            <label for="question-8-1" data-question="8">
+                                Not At all
+                            </label>
+                        </div> 
+                        <div class="form-item">
+                            <input type="radio" id="question-8-2" value="0" {% if all_assessment_test.answer_8 == "Several Days"%} checked{% endif %}>
+                            <label for="question-8-2" data-question="8">
+                                Several Days
+                            </label>
+                        </div>    
+                        <div class="form-item">
+                            <input type="radio" id="question-8-3" value="0" {% if all_assessment_test.answer_8 == "More than half the Days"%} checked{% endif %}>
+                            <label for="question-8-3" data-question="8">
+                                More Than Half the Days
+                            </label>
+                        </div> 
+                        <div class="form-item">
+                            <input id="8-1" type="radio" id="question-8-4" value="0" {% if all_assessment_test.answer_8 == "Nearly everydays"%} checked{% endif %}>
+                            <label for="question-8-4" data-question="8">
+                                Nearly Every Day
+                            </label>
+                        </div> 
+            </section>
+            <section id="question9" class="question odd" style=" border-radius: 10px; padding: 10px; margin-top:10px; background-color: #528aee; color:mintcream; margin-bottom: 20px;">
+                <p>9 of 9</p>
+                <p>"Over the past 2 weeks, how often have you been bothered by any of the following problems: " 
+                    <strong>Thoughts that you would be better off dead or of hurting yourself in some way</strong>"?"</p>
+                    <div class="form-item">
+                        <input type="radio" id="question-9-1" value="0" {% if all_assessment_test.answer_9 == "Not at all"%} checked{% endif %}>
+                        <label for="question-9-1" data-question="9">
+                            Not At all
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input type="radio" id="question-9-2" value="0" {% if all_assessment_test.answer_9 == "Several Days"%} checked{% endif %}>
+                        <label for="question-9-2" data-question="9">
+                            Several Days
+                        </label>
+                    </div>    
+                    <div class="form-item">
+                        <input type="radio" id="question-9-3" value="0" {% if all_assessment_test.answer_9 == "More than half the Days"%} checked{% endif %}>
+                        <label for="question-9-3" data-question="9">
+                            More Than Half the Days
+                        </label>
+                    </div> 
+                    <div class="form-item">
+                        <input id="9-1" type="radio" id="question-9-4" value="0" {% if all_assessment_test.answer_9 == "Nearly everydays"%} checked{% endif %}>
+                        <label for="question-9-4" data-question="9">
+                            Nearly Every Day
+                        </label>
+                    </div> 
+            </section>
+        </form>
+        <form action="assign" style="margin-top: 50px; margin-left: 20px;">
+            <label style="font-weight:bold" for="specialist"><bold>Choose a specialist:</bold></label>
+            <select name="specialist" id="specialist">
+                <option value="Reject">Reject</option>
+                <option value={{specialistusername}}>Assign to me</option>
+                //doctorsList
+                {% for doctor in doctorsList %}
+                <option value={{doctor.username}}>{{doctor.username}}</option>
+                {% endfor %}
+            </select>
+
+            <label style="font-weight:bold" for="year"><bold>Appointment:</bold></label>
+            <select name="day" id="day">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            
+            <select name="month" id="month">
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                <option value="June">Jun</option>
+                <option value="July">July</option>
+                <option value="Aug">Aug</option>
+                <option value="Sep">Sep</option>
+                <option value="Oct">Oct</option>
+                <option value="Nov">Nov</option>
+                <option value="Dec">Dec</option>
+            </select>
+            
+            <select name="year" id="year">
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+            
+            <label style="font-weight:bold" for="hour"><bold>-</bold></label>
+            <select name="hour" id="hour">
+                <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+            </select>
+
+            <label style="font-weight:bold" for="min"><bold>:</bold></label>
+            <select name="min" id="min">
+                <option value="00">00</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="45">45</option>
+            </select>
+
+            <select name="AM_PM" id="AM_PM">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+
+            <!-- <br><br> -->
+            <input type="hidden" name="usernameprofile" value={{specialistusername}} />
+            <input type="hidden" name="username" value={{all_assessment_test.username}} />
+            <input class="btn btn-primary btn-sm" type="submit" value="Submit">
+            <br><br>
+        </form>
+
+        
+    </div>
+</body>
+</html>
